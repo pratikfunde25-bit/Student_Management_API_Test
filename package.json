@@ -1,0 +1,46 @@
+{
+  "name": "student-management-api",
+  "version": "1.0.0",
+  "description": "Production-ready MERN stack Student Management System with JWT Auth, RBAC, and automated testing",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "npm run dev --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "build": "npm install && cd frontend && npm install && npm run build",
+    "test": "jest --forceExit --detectOpenHandles --runInBand",
+    "test:watch": "jest --watch --runInBand"
+  },
+  "keywords": ["nodejs", "express", "mongodb", "mongoose", "react", "jwt", "rbac", "mern"],
+  "author": "Pratik Funde",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "compression": "^1.8.1",
+    "concurrently": "^9.1.2",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.5.2",
+    "helmet": "^8.2.0",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.7.3",
+    "morgan": "^1.11.0",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "jest": "^30.4.2",
+    "nodemon": "^3.1.14",
+    "supertest": "^7.2.2"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testMatch": ["**/tests/**/*.test.js"],
+    "testTimeout": 30000
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
